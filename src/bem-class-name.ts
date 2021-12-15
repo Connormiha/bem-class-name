@@ -12,7 +12,6 @@ interface IBlock {
 }
 
 interface IOptions {
-    throwOnError?: boolean;
     elementDelimiter?: string;
     modifierDelimiter?: string;
 }
@@ -25,8 +24,7 @@ interface IModule {
 const isDev = process.env.NODE_ENV !== 'production';
 const settings = {
     elementDelimiter: '__',
-    modifierDelimiter: '--',
-    throwOnError: false
+    modifierDelimiter: '--'
 };
 
 /**
@@ -42,7 +40,7 @@ function block(name: string, elementParam, modsParam, statesParam) {
     const mods = isElementAsModes ? elementParam : modsParam;
     const states = isElementAsModes ? modsParam : statesParam;
     const element = isElementAsModes ? '' : elementParam;
-    const {modifierDelimiter, elementDelimiter, throwOnError} = settings;
+    const {modifierDelimiter, elementDelimiter} = settings;
 
     const baseBlock = element ? `${name}${elementDelimiter}${element}` : name;
     let result = baseBlock;
@@ -50,13 +48,9 @@ function block(name: string, elementParam, modsParam, statesParam) {
     if (isDev && (!result && !mods)) {
         const message = `There is no ${name}${elementDelimiter}${element} in cssModule`;
 
-        if (throwOnError) {
-            throw Error(message);
-        } else {
-            /* eslint-disable-next-line no-console */
-            console.warn(message);
-            return '';
-        }
+        /* eslint-disable-next-line no-console */
+        console.warn(message);
+        return '';
     }
 
     if (mods) {
