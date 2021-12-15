@@ -1,9 +1,9 @@
-[![Build Status](https://travis-ci.org/Connormiha/bem-class-name.svg?branch=master)](https://travis-ci.org/Connormiha/bem-class-name)
+[![Build Status](https://travis-ci.org/Connormiha/bem-gen.svg?branch=master)](https://travis-ci.org/Connormiha/bem-gen)
 
 ### Example (with BEM generator)
 ```jsx
 import style from './form-payment.styl';
-import block from 'bem-class-name';
+import block from 'bem-gen';
 
 const b = block('form-payment');
 

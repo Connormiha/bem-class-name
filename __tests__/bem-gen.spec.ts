@@ -1,9 +1,9 @@
-import bem from '../src/bem-class-name';
+import bem from '../src/bem-gen';
 
 const namesToArray = (name: string) =>
     name.split(' ').sort();
 
-describe('bem-class-name', () => {
+describe('bem-gen', () => {
     const block = bem('HASH_INPUT');
 
     it('should return base element', () => {

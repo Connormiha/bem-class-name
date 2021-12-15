@@ -1,6 +1,6 @@
 /* @flow */
 
-import block from '../../src/bem-class-name.js';
+import block from '../../src/bem-gen.js';
 
 block('input');
 block('input')({foo: '1'});

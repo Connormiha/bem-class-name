@@ -1,5 +1,5 @@
 {
-  "name": "bem-class-name",
+  "name": "bem-gen",
   "description": "BEM class name generator",
   "version": "1.0.0",
   "license": "MIT",
@@ -7,11 +7,11 @@
   "engines": {
     "node": ">=8.9.0"
   },
-  "main": "dist/bem-class-name.js",
-  "types": "dist/bem-class-name.d.ts",
+  "main": "dist/bem-gen.js",
+  "types": "dist/bem-gen.d.ts",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Connormiha/bem-class-name.git"
+    "url": "git://github.com/Connormiha/bem-gen.git"
   },
   "keywords": [
     "BEM",
