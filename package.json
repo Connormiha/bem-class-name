@@ -1,0 +1,46 @@
+{
+  "name": "bem-class-name",
+  "description": "BEM class name generator",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Mikhail Bodrov",
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "main": "dist/bem-class-name.js",
+  "types": "dist/bem-class-name.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Connormiha/bem-class-name.git"
+  },
+  "keywords": [
+    "BEM",
+    "class",
+    "classname",
+    "block",
+    "element",
+    "modifier",
+    "css"
+  ],
+  "scripts": {
+    "build": "rm -fr dist && mkdir dist && cp src/*.flow dist && tsc -p src --outDir dist",
+    "types": "tsc -p __tests__/ts-types --noEmit && flow check __tests__/flow-types",
+    "coverage": "jest --coverage",
+    "lint": "eslint --ext .ts ./src",
+    "prepare": "npm run lint && npm test && npm run types && npm run build && husky install",
+    "test": "jest --no-cache"
+  },
+  "devDependencies": {
+    "@types/jest": "27.0.3",
+    "@types/node": "16.11.11",
+    "@typescript-eslint/eslint-plugin": "5.5.0",
+    "@typescript-eslint/parser": "5.5.0",
+    "eslint": "8.4.0",
+    "eslint-plugin-jest": "25.3.0",
+    "flow-bin": "0.166.1",
+    "husky": "7.0.4",
+    "jest": "27.4.3",
+    "jest-cli": "27.4.3",
+    "typescript": "4.5.2"
+  }
+}

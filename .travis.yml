@@ -1,0 +1,13 @@
+dist: focal
+language: node_js
+
+node_js:
+  - "14"
+
+before_script:
+- npm run types
+- npm run lint
+
+notifications:
+  email:
+    on_success: never

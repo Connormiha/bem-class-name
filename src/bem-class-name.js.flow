@@ -1,0 +1,32 @@
+// @flow
+
+type ModsType = {
+    [string]: boolean | string | number | void;
+};
+
+type StatesType = {
+    [string]: boolean | void;
+};
+
+type Options = {|
+    throwOnError?: boolean;
+    elementDelimiter?: string;
+    modifierDelimiter?: string;
+|};
+
+interface Block {
+    (): string;
+    (null): string;
+    (element: string, mods?: ModsType | null, states?: StatesType | null): string;
+    (null, mods: ModsType | null, states?: StatesType | null): string;
+    (mods: ModsType, states?: StatesType | null): string;
+}
+
+interface Module {
+    (name: string): Block;
+    setSettings(options: Options): void;
+}
+
+declare var bemModule: Module;
+
+export default bemModule;
