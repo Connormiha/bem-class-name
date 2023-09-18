@@ -1,5 +1,2 @@
 [include]
 ../../src/*.js.flow$
-
-[version]
-0.215.0
